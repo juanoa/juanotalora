@@ -1,0 +1,22 @@
+---
+import HamburgerMenuIcon from "../icons/HamburgerMenuIcon.astro";
+import NavbarLink from "./NavbarLink.astro";
+---
+
+<div
+  class="row fixed right-16 top-16 z-10 hidden gap-10 rounded-full bg-gray-100/50 px-10 py-5 backdrop-blur-md lg:flex"
+>
+  <NavbarLink label="Home" to="/" />
+  <span class="cursor-no-drop">Projects</span>
+  <NavbarLink
+    to="https://juanotalora.notion.site/From-Junior-Frontend-Developer-to-Senior-Product-Engineer-1144a54a87be80c6b4f9c48ebece1242"
+    label="Product Engineer Roadmap"
+  />
+  <NavbarLink to="https://medium.com/@juanoa" label="Frontend articles" />
+</div>
+<div
+  class="row fixed right-8 top-8 z-10 flex items-center gap-5 rounded-full bg-gray-100/50 px-5 py-2.5 backdrop-blur-md lg:hidden"
+>
+  <span>Home</span>
+  <HamburgerMenuIcon />
+</div>

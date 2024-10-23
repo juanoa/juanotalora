@@ -1,9 +1,7 @@
 ---
-import HamburgerMenuIcon from "../components/icons/HamburgerMenuIcon.astro";
-import ExternalLinkIcon from "../components/icons/ExternalLinkIcon.astro";
-
+import Navbar from "../components/navbar/Navbar.astro";
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -11,36 +9,24 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<main>
-			<div class="row fixed right-16 top-16 z-10 hidden gap-10 rounded-full bg-gray-100/50 px-10 py-5 backdrop-blur-md lg:flex">
-				<span class="underline">Home</span>
-				<span>Projects</span>
-				<a class="flex gap-2 items-center" target="_blank" href="https://juanotalora.notion.site/From-Junior-Frontend-Developer-to-Senior-Product-Engineer-1144a54a87be80c6b4f9c48ebece1242">
-					<span>Product Engineer Roadmap</span>
-					<ExternalLinkIcon />
-				</a>
-				<a class="flex gap-2 items-center" target="_blank" href="https://medium.com/@juanoa">
-					<span>Frontend articles</span>
-					<ExternalLinkIcon />
-				</a>
-			</div>
-			<a class="row fixed right-8 top-8 z-10 flex items-center gap-5 rounded-full bg-gray-100/50 px-5 py-2.5 backdrop-blur-md lg:hidden">
-				<span>Home</span>
-				<HamburgerMenuIcon />
-			</a>
-			<slot />
-		</main>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <main>
+      <Navbar />
+      <slot />
+    </main>
+  </body>
 </html>
