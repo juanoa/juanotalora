@@ -17,16 +17,15 @@ export default defineConfig({
 				{
 					label: 'About',
 					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'It\'s Juan', slug: 'about/me' },
+						{ label: 'Me', slug: 'about/me' },
 					],
 				},
 			],
 			plugins: [
 				starlightThemeBlack({
 					navLinks: [{
-						label: 'Docs',
-						link: '/getting-started',
+						label: 'About me',
+						link: '/about/me',
 					}],
 					footerText: 'From Coruña to the world'
 				})
