@@ -5,21 +5,14 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "format": "prettier --write ."
+    "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.4",
-    "@tailwindcss/vite": "4.0.14",
-    "astro": "5.5.3",
-    "tailwindcss": "4.0.14",
-    "typescript": "5.6.3"
-  },
-  "devDependencies": {
-    "prettier": "3.3.3",
-    "prettier-plugin-astro": "0.14.1",
-    "prettier-plugin-tailwindcss": "0.6.8"
+    "@astrojs/starlight": "0.32.3",
+    "astro": "^5.5.3",
+    "sharp": "0.32.5",
+    "starlight-theme-black": "0.3.0"
   }
 }
