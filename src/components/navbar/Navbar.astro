@@ -1,19 +1,54 @@
 ---
 import HamburgerMenuIcon from "../icons/HamburgerMenuIcon.astro";
 import NavbarLink from "./NavbarLink.astro";
+
+const navigationLinks = [
+  { label: "Home", to: "/" },
+  { label: "Frontend Engineer Handbook", to: "https://frontendhandbook.engineer/" },
+  { label: "Frontend articles", to: "https://medium.com/@juanoa" },
+] as const;
 ---
 
+<!-- Desktop Navigation -->
 <div
   class="row fixed right-16 top-16 z-10 hidden gap-10 rounded-full bg-gray-100/50 px-10 py-5 backdrop-blur-md lg:flex"
 >
-  <NavbarLink label="Home" to="/" />
-  <span class="cursor-no-drop">Projects</span>
-  <NavbarLink to="https://frontendhandbook.engineer/" label="Frontend Engineer Handbook" />
-  <NavbarLink to="https://medium.com/@juanoa" label="Frontend articles" />
+  { navigationLinks.map((link) => <NavbarLink label={link.label} to={link.to} />) }
 </div>
-<div
-  class="row fixed right-8 top-8 z-10 flex items-center gap-5 rounded-full bg-gray-100/50 px-5 py-2.5 backdrop-blur-md lg:hidden"
->
-  <span>Home</span>
-  <HamburgerMenuIcon />
+
+<!-- Mobile Navigation -->
+<div class="fixed right-8 top-8 z-10 lg:hidden">
+  <button
+    id="mobile-menu-button"
+    class="flex items-center gap-5 rounded-full bg-gray-100/50 px-5 py-2.5 backdrop-blur-md"
+  >
+    <span>Menu</span>
+    <HamburgerMenuIcon />
+  </button>
+
+  <div
+    id="mobile-menu"
+    class="absolute right-0 mt-2 hidden w-64 rounded-2xl bg-gray-100/50 p-4 backdrop-blur-md"
+  >
+    <nav class="flex flex-col gap-4">
+      { navigationLinks.map((link) => <NavbarLink label={link.label} to={link.to} />) }
+    </nav>
+  </div>
 </div>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (event) => {
+    if (!mobileMenuButton?.contains(event.target as Node) && 
+        !mobileMenu?.contains(event.target as Node)) {
+      mobileMenu?.classList.add('hidden');
+    }
+  });
+</script>
