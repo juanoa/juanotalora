@@ -13,20 +13,23 @@ export default defineConfig({
 				'x.com': 'https://x.com/juanoa',
 				linkedin: 'https://linkedin.com/in/juanoa'
 			},
-			sidebar: [
-				{
-					label: 'About',
-					items: [
-						{ label: 'Me', slug: 'about/me' },
-					],
+			defaultLocale: 'root',
+			sidebar: [{
+				label: 'Empieza aquí',
+				autogenerate: { directory: 'getting-started' },
+			},{
+				label: 'About',
+				autogenerate: { directory: 'about' },
+			}],
+			locales: {
+				root: {
+					label: 'Spanish',
+					lang: 'es',
 				},
-			],
+			},
 			plugins: [
 				starlightThemeBlack({
-					navLinks: [{
-						label: 'About me',
-						link: '/about/me',
-					}],
+					navLinks: [],
 					footerText: 'From Coruña to the world'
 				})
 			],
