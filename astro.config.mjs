@@ -21,6 +21,9 @@ export default defineConfig({
 				label: 'About',
 				autogenerate: { directory: 'about' },
 			},{
+				label: 'Proyectos',
+				autogenerate: { directory: 'projects' },
+			},{
 				label: 'Frontend handbook',
 				autogenerate: { directory: 'frontend-handbook' },
 			}],
