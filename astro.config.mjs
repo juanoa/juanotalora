@@ -20,6 +20,9 @@ export default defineConfig({
 			},{
 				label: 'About',
 				autogenerate: { directory: 'about' },
+			},{
+				label: 'Frontend handbook',
+				autogenerate: { directory: 'frontend-handbook' },
 			}],
 			locales: {
 				root: {
