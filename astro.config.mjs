@@ -8,6 +8,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'juanoa',
+			favicon: '/favicon.png',
 			social: {
 				github: 'https://github.com/juanoa',
 				'x.com': 'https://x.com/juanoa',
