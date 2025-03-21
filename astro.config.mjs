@@ -30,9 +30,10 @@ export default defineConfig({
 			}],
 			locales: {
 				root: {
-					label: 'Spanish',
+					label: 'Español',
 					lang: 'es',
 				},
+				en: { label: 'English' },
 			},
 			plugins: [
 				starlightThemeBlack({
