@@ -24,9 +24,6 @@ export default defineConfig({
 			},{
 				label: 'Proyectos',
 				autogenerate: { directory: 'projects' },
-			},{
-				label: 'Frontend handbook',
-				autogenerate: { directory: 'frontend-handbook' },
 			}],
 			locales: {
 				root: {
