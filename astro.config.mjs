@@ -24,7 +24,11 @@ export default defineConfig({
 			},{
 				label: 'Proyectos',
 				autogenerate: { directory: 'projects' },
-			}],
+			},
+			{ 
+				label: '🦄 Frontend Handbook',
+				link: 'https://www.frontendhandbook.engineer/' 
+			}]	,
 			locales: {
 				root: {
 					label: 'Español',
