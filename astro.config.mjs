@@ -24,10 +24,6 @@ export default defineConfig({
 			},{
 				label: 'Proyectos',
 				autogenerate: { directory: 'projects' },
-			},
-			{ 
-				label: '🦄 Frontend Handbook',
-				link: 'https://www.frontendhandbook.engineer/' 
 			}]	,
 			locales: {
 				root: {
@@ -38,7 +34,21 @@ export default defineConfig({
 			},
 			plugins: [
 				starlightThemeBlack({
-					navLinks: [],
+					navLinks: [
+            {
+              label: 'About',
+              link: '/about/me',
+            },
+            {
+              label: 'Frontend Handbook',
+							link: 'https://www.frontendhandbook.engineer',
+              badge: 'new',
+              attrs: {
+                target: '_blank',
+                rel: 'noopener',
+              },
+            },
+          ],
 					footerText: 'From Coruña to the world'
 				})
 			],
