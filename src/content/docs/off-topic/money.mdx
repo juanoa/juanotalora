@@ -3,11 +3,17 @@ title: Dinero
 description: Mi relación con el dinero
 ---
 
+import { Aside } from '@astrojs/starlight/components';
 import BudgetChart from "../../../components/off-topic/money/BudgetChart"
+import InvestmentChart from "../../../components/off-topic/money/InvestmentChart"
 
 En mi casa, aunque nunca hemos tenido ningún problema económico importante, siempre se han tenido que hacer cuentas para llegar a final de mes.
 
 Aunque siempre fue un tema tabú con el que los adultos siempre se encerraban en la cocina para hablar, desde que tuve que empezar a gestionar mis primeros ahorros siempre he tenido un afán por hacerlo bien. Al principio porque pensaba que si tenía más dinero iba a ser más feliz y ahora porque quiero poder irme a la cama tranquilo todas las noches.
+
+<Aside type="caution">
+  No te tomes esto como un consejo financiero. No tengo ningún conocimiento profesional al respecto. Simplemente te comparto mi experiencia y mi punto de vista al respecto. Informáte y toma tus propias decisiones
+</Aside>
 
 Mi **situación actual** es la siguiente:
 
@@ -15,6 +21,9 @@ Mi **situación actual** es la siguiente:
 - Ingeniero de software
 - Contrato indefinido en multinacional
 - Viviendo solo de alquiler
+- Coche propio
+
+Con todos estos parámetros, mi estrategia ahora mismo se basa en **arriesgar más en mis inversiones e intentar ajustar al máximo los ahorros** para tener un pequño colchón mientras lo demás lo gasto (o invierto, según como se quiera ver) en experiencias que me ayuden a formarme mejor como persona.
 
 ## Presupuesto
 
@@ -32,11 +41,21 @@ A mi edad, hay cosas que me gustaría hacer como viajar o vivir experiencias que
 
 ## Ahorro
 
-WIP...
+Una parte del dinero lo destino al ahorro con el fin de crear un colchón financiero que me permita poder afrontar algunos gastos imprevistos, aunque también en ocasiones lo puedo utilizar incluso para viajes.
+
+Como he dicho antes, la idea no es crear un gran colchón de ahorro. Creo que estoy en una edad en la que puedo permitirme tener gran parte de mi patrimonio en inversiones más arriesgadas que me puedan dar una buena rentabilidad a largo plazo y que en el peor de los casos, las pérdidas no puedan afectarme significativamente.
 
 ## Inversiones
 
-WIP...
+Ahora mismo mi cartera se divide de la siguiente forma:
+
+- **Fondos indexados**: Utilizando la plataforma [Finizens](https://app.finizens.com/inv/JUAN-39197) y con el plan de mayor riesgo que permite la plataforma (100% de renta variable y 0% de renta fija).
+- **Inmobiliario**: En este caso utilizando plataformas como WeCity _(Código referido para 50€: WECITY-90L61V)_ y [Urbanitae](https://urbanitae.com/es/invitado?access=U102861) para invertir en proyectos de crowdfunding y crowdlending.
+- **Criptomonedas**: Se llevan la parte más minoritaria de mi cartera, aunque últimamente estoy animándome a invertir algo más.
+
+<InvestmentChart client:load />
+
+En ocasiones he analizado en diversificar algo más mi cartera, posiblemente inviertiendo directamente en fondos de inversión. Me llaman bastante los fondos de inversión indexados a mercados emergentes como India o China, pero todavía no me he decidido.
 
 ## Próximos pasos
 
