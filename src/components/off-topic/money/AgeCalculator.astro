@@ -1,0 +1,17 @@
+---
+// Calculate age based on birthdate
+const birthDate = new Date('1999-05-25');
+const currentDate = new Date();
+
+let age = currentDate.getFullYear() - birthDate.getFullYear();
+
+// Adjust age if birthday hasn't occurred yet this year
+if (
+  currentDate.getMonth() < birthDate.getMonth() || 
+  (currentDate.getMonth() === birthDate.getMonth() && currentDate.getDate() < birthDate.getDate())
+) {
+  age--;
+}
+---
+
+<span>{age} años</span>
