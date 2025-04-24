@@ -22,6 +22,9 @@ export default defineConfig({
 			label: 'About',
 			autogenerate: { directory: 'about' },
 		}, {
+			label: 'Ingeniería',
+			autogenerate: { directory: 'engineering' },
+		}, {
 			label: 'Off-topic',
 			autogenerate: { directory: 'off-topic' },
 		}],
