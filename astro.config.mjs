@@ -49,7 +49,7 @@ export default defineConfig({
 						},
 					},
 				],
-				footerText: 'From Coruña to the world'
+				footerText: `${new Date().getFullYear()}. From Coruña to the world.`,
 			})
 		],
 	}), react()],
