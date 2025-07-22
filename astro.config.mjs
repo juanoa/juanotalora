@@ -1,13 +1,12 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import starlightThemeBlack from 'starlight-theme-black'
 import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
 	integrations: [starlight({
-		title: 'juanoa',
+		title: 'Juan Otálora',
 		favicon: '/favicon.png',
 		social: {
 			github: 'https://github.com/juanoa',
@@ -17,10 +16,13 @@ export default defineConfig({
 		defaultLocale: 'root',
 		sidebar: [{
 			label: 'Empieza aquí',
-			autogenerate: { directory: 'getting-started' },
+			autogenerate: { directory: 'empieza-aqui' },
 		}, {
 			label: 'About',
 			autogenerate: { directory: 'about' },
+		},{
+			label: 'Frontend',
+			autogenerate: { directory: 'frontend' },
 		}, {
 			label: 'Off-topic',
 			autogenerate: { directory: 'off-topic' },
@@ -30,27 +32,6 @@ export default defineConfig({
 				label: 'Español',
 				lang: 'es',
 			},
-			en: { label: 'English' },
 		},
-		plugins: [
-			starlightThemeBlack({
-				navLinks: [
-					{
-						label: 'About',
-						link: '/about/me',
-					},
-					{
-						label: 'Frontend Handbook',
-						link: 'https://www.frontendhandbook.engineer',
-						badge: 'new',
-						attrs: {
-							target: '_blank',
-							rel: 'noopener',
-						},
-					},
-				],
-				footerText: `${new Date().getFullYear()}. From Coruña to the world.`,
-			})
-		],
 	}), react()],
 });

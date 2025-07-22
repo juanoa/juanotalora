@@ -1,0 +1,65 @@
+---
+title: Arquitectura hexagonal
+description: Cómo implementar una arquitectura limpia en un proyecto de frontend
+sidebar:
+  order: 1
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
+
+## Vertical slicing
+
+[WIP]
+
+Teniendo todo esto en cuenta, nuestra arquitectura de carpetas en un proyecto de frontend (en este caso usando React como biblioteca de UI) quedaría de la siguiente forma:
+
+<FileTree>
+
+- src
+  - modules
+    - products
+      - domain
+        - Product.ts
+      - application
+        - get-product.ts
+      - infrastructure
+        - product-rest-client.ts
+      - representation
+        - ProductCard.tsx
+        - ProductPriceLabel.tsx
+    - categories
+      - domain
+        - Category.ts
+      - application
+        - get-all-categories.ts
+        - get-category.ts
+      - infrastructure
+        - categories-rest-client.ts
+      - representation
+        - CategoryGrid.tsx
+        - CategoryFilters.tsx
+  - pages
+    - ProductPage.tsx
+    - CategoryPage.tsx
+- package.json
+
+</FileTree>
+
+Aunque está representado usando la jerarquía de un poryecto típico de React, **se puede ajustar** para llevar a cualquier otro framework o librería de UI.
+
+<Aside>
+  ¿Qué hacemos con frameworks que tienen sistemas de enrutado basados en la jerarquía de carpetas como NextJS? En ese caso siempre respetar al máximo posible el framework para asegurarnos de que vamos a escalar lo mejor posible. Sin embargo, el concepto de carpeta `modules` con el vertical slicing dentro lo podemos seguir teniendo fuera de la carpeta a partir de la cual NextJS infiere las rutas de la aplicación.
+</Aside>
+
+## Dominio
+
+Más información en el artículo sobre Domain Driven Design.
+
+## Aplicación
+
+## Infrastructura
+
+## Representación
+
+En multitud de ocasiones se me ha ocurrido introducir la carpeta de presentación dentro de la infrastructura. Al final, se trata de código generalmente acoplado a un framework o a una librería de UI, por lo que se escapa del dominio puro de la aplicación. Siguiendo el concepto de dominio, nos gustaría ser capaces de poder desacoplar la lógica de negocio que tengamos en el frontal de la forma en la que esta se representa en la pantalla. Sin embarbo, en el caso de las aplicaciones web, la capa de representación tiene un peso demasiado importante como para no estar separada del resto.
