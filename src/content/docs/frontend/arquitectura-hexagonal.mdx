@@ -8,9 +8,27 @@ sidebar:
 import { FileTree } from '@astrojs/starlight/components';
 import { Aside } from '@astrojs/starlight/components';
 
-## Vertical slicing
+Llevo varios años trabajando con proyectos de frontend (también algunos de backend), la mayoría de ellos en React. En todos ellos he tenido la suerte de poder de investigar nuevas formas de organizar ficheros y estructurar carpetas. Es un camino que parece nunca tener fin, siempre se te acaban ocurriendo nuevas posibles mejoras que acabas probando con los equipos y que se van iterando hasta llegar a lo que finalmente queremos.
 
-[WIP]
+El objetivo de post es intentar resumir todos estos conceptos que ido uniendo a lo largo de los últimos años para condensarlos y dar una guía para estructurar proyectos frontend (aunque los principios por los que se va a regir esta guía son también aplicables a cualquier otro tipo de proyecto).
+
+## Dominio, aplicación e infraestructura
+
+Todos tenemos en mente el típico hexágono o círculo con tres capas que representan el dominio, la aplicación y la infrasestructura. Las reglas son claras, cada capa solo puede conocer a las capas inferiores o así mismo. Es decir:
+
+- Dominio solo puede tener importaciones de módulos de dominio
+- Aplicación solo puede tener importaciones de otros módulos de aplicación y de dominio
+- Infraestructura puede tener importaciones de módulos de cualquier capa
+
+Esto nos permite tener desacoplado el core de la aplicación del resto de código. Hasta aquí la teoría que todos conocemos.
+
+### ¿Es necesaria una arquitectura hexagonal en frontend?
+
+WIP
+
+## Vertical slicing y screaming architecture
+
+WIP
 
 Teniendo todo esto en cuenta, nuestra arquitectura de carpetas en un proyecto de frontend (en este caso usando React como biblioteca de UI) quedaría de la siguiente forma:
 
