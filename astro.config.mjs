@@ -27,7 +27,8 @@ export default defineConfig({
 		}, {
 			label: 'Off-topic',
 			autogenerate: { directory: 'off-topic' },
-		}],
+		},
+			"opinion"],
 		locales: {
 			root: {
 				label: 'Español',
