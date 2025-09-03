@@ -1,9 +1,11 @@
 import { ResponsiveContainer, PieChart, Pie, Tooltip } from "recharts";
 
 const data = [
-  { name: 'Fondos indexados', value: 53.6 },
-  { name: 'Inmobiliario', value: 42.9 },
-  { name: 'Criptomonedas', value: 3.5 },
+  { name: 'Fondos indexados', value: 52 },
+  { name: 'Inmobiliario', value: 33 },
+  { name: 'Ahorro', value: 9 },
+  { name: 'Criptomonedas', value: 4 },
+  { name: 'Inversión activa', value: 2 },
 ];
 
 export default function InvestmentChart() {
