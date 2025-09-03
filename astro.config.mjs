@@ -24,9 +24,11 @@ export default defineConfig({
 		}, {
 			label: 'Frontend',
 			autogenerate: { directory: 'frontend' },
+			collapsed: true,
 		}, {
 			label: 'Off-topic',
 			autogenerate: { directory: 'off-topic' },
+			collapsed: true,
 		},
 			"opinion"],
 		locales: {
