@@ -6,7 +6,7 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
 	integrations: [starlight({
-		title: 'Juan Otálora',
+		title: 'juanoa',
 		favicon: '/favicon.png',
 		social: [
 			{ icon: "github", label: "GitHub", href: "https://github.com/juanoa" },
