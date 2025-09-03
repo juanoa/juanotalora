@@ -8,11 +8,11 @@ export default defineConfig({
 	integrations: [starlight({
 		title: 'Juan Otálora',
 		favicon: '/favicon.png',
-		social: {
-			github: 'https://github.com/juanoa',
-			'x.com': 'https://x.com/juanoa',
-			linkedin: 'https://linkedin.com/in/juanoa'
-		},
+		social: [
+			{ icon: "github", label: "GitHub", href: "https://github.com/juanoa" },
+			{ icon: "x.com", label: "X", href: "https://x.com/juanoa_" },
+			{ icon: "linkedin", label: "LinkedIn", href: "https://linkedin.com/in/juanoa" }
+		],
 		defaultLocale: 'root',
 		sidebar: [{
 			label: 'Empieza aquí',
@@ -20,7 +20,7 @@ export default defineConfig({
 		}, {
 			label: 'About',
 			autogenerate: { directory: 'about' },
-		},{
+		}, {
 			label: 'Frontend',
 			autogenerate: { directory: 'frontend' },
 		}, {
