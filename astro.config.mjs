@@ -10,6 +10,12 @@ export default defineConfig({
 	integrations: [starlight({
 		title: 'juanoa',
 		favicon: '/favicon.png',
+		customCss: [
+			// Fontsource files for to regular and semi-bold font weights.
+			'@fontsource-variable/roboto-slab/index.css',
+
+			'./src/styles/custom.css',
+		],
 		social: [
 			{ icon: "github", label: "GitHub", href: "https://github.com/juanoa" },
 			{ icon: "x.com", label: "X", href: "https://x.com/juanoa_" },
