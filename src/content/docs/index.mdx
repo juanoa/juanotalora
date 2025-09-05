@@ -12,3 +12,14 @@ hero:
       link: /opinion
       variant: minimal
 ---
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+## Lo último
+
+Últimos artículos que he escrito y que os invito a leer:
+
+<CardGrid>
+  <LinkCard title="Internet nos está jodiendo la vida" description="Opinión" href="/opinion/redes-sociales" />
+  <LinkCard title="Errar" description="Opinión" href="/opinion/errar" />
+  <LinkCard title="Dinero" description="Off-topic" href="/off-topic/dinero" />
+</CardGrid>
