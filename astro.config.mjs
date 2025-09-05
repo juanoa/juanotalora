@@ -26,10 +26,10 @@ export default defineConfig({
 			label: 'Sobre mi',
 			slug: "about",
 		}, {
-			label: 'Frontend',
+			label: 'Frontend Handbook',
 			autogenerate: { directory: 'frontend' },
 			collapsed: true,
-			badge: 'TODO!',
+			badge: 'WIP',
 		}, {
 			label: 'Off-topic',
 			autogenerate: { directory: 'off-topic' },
