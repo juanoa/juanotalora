@@ -23,9 +23,6 @@ export default defineConfig({
 		],
 		defaultLocale: 'root',
 		sidebar: [{
-			label: 'Empieza aquí',
-			autogenerate: { directory: 'empieza-aqui' },
-		}, {
 			label: 'Sobre mi',
 			slug: "about",
 		}, {
@@ -38,7 +35,8 @@ export default defineConfig({
 			autogenerate: { directory: 'off-topic' },
 			collapsed: true,
 		},
-			"opinion"],
+			"opinion",
+		],
 		locales: {
 			root: {
 				label: 'Español',
