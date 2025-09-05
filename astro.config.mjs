@@ -26,12 +26,13 @@ export default defineConfig({
 			label: 'Empieza aquí',
 			autogenerate: { directory: 'empieza-aqui' },
 		}, {
-			label: 'About',
-			autogenerate: { directory: 'about' },
+			label: 'Sobre mi',
+			slug: "about",
 		}, {
 			label: 'Frontend',
 			autogenerate: { directory: 'frontend' },
 			collapsed: true,
+			badge: 'TODO!',
 		}, {
 			label: 'Off-topic',
 			autogenerate: { directory: 'off-topic' },
