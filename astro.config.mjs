@@ -29,7 +29,6 @@ export default defineConfig({
 			label: 'Frontend Handbook',
 			autogenerate: { directory: 'frontend' },
 			collapsed: true,
-			badge: 'WIP',
 		}, {
 			label: 'Off-topic',
 			autogenerate: { directory: 'off-topic' },
