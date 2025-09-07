@@ -34,6 +34,10 @@ export default defineConfig({
 			label: 'Off-topic',
 			autogenerate: { directory: 'off-topic' },
 			collapsed: true,
+		}, {
+			label: 'Marcadores',
+			autogenerate: { directory: 'marcadores' },
+			collapsed: true,
 		},
 			"opinion",
 		],
