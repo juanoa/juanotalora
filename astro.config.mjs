@@ -16,6 +16,10 @@ export default defineConfig({
 
 			'./src/styles/custom.css',
 		],
+		components: {
+			// Override the default Pagination component with a minimalist version
+			Pagination: './src/components/ui/Pagination.astro',
+		},
 		social: [
 			{ icon: "github", label: "GitHub", href: "https://github.com/juanoa" },
 			{ icon: "x.com", label: "X", href: "https://x.com/juanoa_" },
