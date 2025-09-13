@@ -20,7 +20,7 @@ export default function BudgetChart() {
           fill="#989898"
           label
         />
-        <Tooltip />
+        <Tooltip formatter={(value, label) => [`${value}%`, label]} />
       </PieChart>
     </ResponsiveContainer>
   )

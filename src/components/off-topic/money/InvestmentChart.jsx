@@ -22,7 +22,7 @@ export default function InvestmentChart() {
           fill="#989898"
           label
         />
-        <Tooltip />
+        <Tooltip formatter={(value, label) => [`${value}%`, label]} />
       </PieChart>
     </ResponsiveContainer>
   )
