@@ -7,9 +7,9 @@ sidebar:
 ---
 import Image from "@/components/ui/Image.astro"
 import TechPillars from "@/components/frontend/tech-pillars.jsx"
+import Microinteractions from "@/components/frontend/microinteractions.jsx"
 import UtilitiasDelectus from "./__assets__/diseno-002.png";
 import Interfaces from "./__assets__/diseno-003.png";
-import Microinteractions from "./__assets__/diseno-004.gif";
 
 En este capítulo vamos a profundizar un poco más en el diseño como tercer pilar fundamental en el rango de disciplinas que debería tener un buen Ingeniero Frontend. Somos los encargados de hacer la parte visible, de construir la interfaz a través de la cual el usuario se comunicará con el sistema. Se necesita de un gusto por lo exquisito y por la calidad para ser capaces de confeccionar auténticas maravillas que las personas amen usar.
 
@@ -57,12 +57,7 @@ Desde esas primeras interfaces gráficas que veíamos en el primer Macintosh has
 
 Las **microinteracciones** son aquellas animaciones y transiciones que pasan casi desapercibidos, que por lo general no mejoran funcionalmente la aplicación, pero que generar un placer visual en la persona que interactúa con ella.
 
-<Image
-  src={Microinteractions}
-  width={400}
-  alt="Ejemplos de microinteracciones"
-  caption="Ejemplos de microinteracciones"
-/>
+<Microinteractions client:load />
 
 Una buena microinteracción debe de ser como una especia. Si te pasas y gana más protagonismo del que se merece, arruinará tu aplicación. Si por el contrario te quedas corto o directamente no las usas, parecerá como que le falta algo.
 

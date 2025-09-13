@@ -51,19 +51,20 @@ Components follow the same structure as content:
 ```
 src/components/
 ├── frontend/                    # Frontend Handbook components
-│   └── tech-pillars.jsx        # React component for the 3 pillars
+│   ├── tech-pillars.jsx        # React component for the 3 pillars
+│   └── microinteractions.jsx   # Interactive microinteractions component
 ├── marcadores/                  # Bookmark components
-│   ├── BookCard.jsx            # Individual book card
-│   ├── BookCard.css            # BookCard styles
-│   ├── BooksGallery.jsx        # Books gallery container
-│   └── BooksGallery.css        # BooksGallery styles
+│   ├── book-card.jsx           # Individual book card
+│   ├── book-card.css           # BookCard styles
+│   ├── books-gallery.jsx       # Books gallery container
+│   └── books-gallery.css       # BooksGallery styles
 ├── off-topic/                   # Components for off-topic content
 │   └── money/                   # Money-specific components
-│       ├── AgeCalculator.astro
-│       ├── BudgetChart.jsx
-│       └── InvestmentChart.jsx
+│       ├── age-calculator.astro
+│       ├── budget-chart.jsx
+│       └── investment-chart.jsx
 └── ui/                         # Reusable UI components
-    └── Image.astro             # Custom image component
+    └── image.astro             # Custom image component
 ```
 
 ## Development Patterns
@@ -88,7 +89,7 @@ Markdown content...
 ### 2. Component Imports
 - **Astro Components**: `import Component from "@/components/path/component.astro"`
 - **React Components**: `import Component from "@/components/path/component.jsx"`
-- **Component Styles**: `import './Component.css'` (alongside component file)
+- **Component Styles**: `import './component.css'` (alongside component file)
 - **Local Images**: `import Image from "./__assets__/image.png"`
 
 ### 3. React Components
@@ -136,7 +137,7 @@ sidebar: [
 - **Spanish**: All names in Spanish
 
 ### Components
-- **PascalCase**: `TechPillars.jsx`, `BudgetChart.jsx`
+- **kebab-case**: `tech-pillars.jsx`, `budget-chart.jsx`, `microinteractions.jsx`
 - **Descriptive**: Names that describe the functionality
 - **React**: `.jsx` for React components
 - **Astro**: `.astro` for Astro components
@@ -174,9 +175,9 @@ Components use specific colors:
 1. **Astro**: For static components or server-side logic
 2. **React**: For interactive components (charts, forms, etc.)
 3. **Location**: Follow the content folder structure
-4. **Naming**: PascalCase, descriptive
-5. **Styles**: Create a CSS file alongside the component (e.g., `Component.css`)
-6. **Import**: Import the CSS file in the component: `import './Component.css'`
+4. **Naming**: kebab-case, descriptive (e.g., `my-component.jsx`)
+5. **Styles**: Create a CSS file alongside the component (e.g., `my-component.css`)
+6. **Import**: Import the CSS file in the component: `import './my-component.css'`
 
 ### 3. Add MDX Content
 1. **Frontmatter**: Include title, description, sidebar if needed
@@ -193,9 +194,9 @@ Components use specific colors:
 
 ### Simple React Component
 ```jsx
-// /src/components/new-section/MyComponent.jsx
+// /src/components/new-section/my-component.jsx
 import React, { useState } from 'react';
-import './MyComponent.css';
+import './my-component.css';
 
 export default function MyComponent({ prop }) {
   const [state, setState] = useState(prop);
@@ -209,7 +210,7 @@ export default function MyComponent({ prop }) {
 ```
 
 ```css
-/* /src/components/new-section/MyComponent.css */
+/* /src/components/new-section/my-component.css */
 .my-component {
   margin: 1rem 0;
   padding: 1rem;
@@ -225,7 +226,7 @@ title: My Page
 description: Description of my page
 ---
 
-import MyComponent from "@/components/new-section/MyComponent.jsx"
+import MyComponent from "@/components/new-section/my-component.jsx"
 
 # My Page
 
@@ -235,8 +236,8 @@ import MyComponent from "@/components/new-section/MyComponent.jsx"
 ### Astro Component
 ```astro
 ---
-// /src/components/new-section/MyComponent.astro
-import './MyComponent.css';
+// /src/components/new-section/my-component.astro
+import './my-component.css';
 
 export interface Props {
   title: string;
@@ -253,7 +254,7 @@ const { title, content } = Astro.props;
 ```
 
 ```css
-/* /src/components/new-section/MyComponent.css */
+/* /src/components/new-section/my-component.css */
 .my-component {
   margin: 1rem 0;
   padding: 1rem;
