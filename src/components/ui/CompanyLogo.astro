@@ -1,0 +1,53 @@
+---
+export interface Props {
+  name: string;
+  logo: any; // Astro ImageMetadata object
+  alt?: string;
+  size?: "small" | "medium" | "large";
+}
+
+const { name, logo, alt = `${name} logo`, size = "small" } = Astro.props;
+
+const sizeClasses = {
+  small: "company-logo--small",
+  medium: "company-logo--medium",
+  large: "company-logo--large",
+};
+---
+
+<div class={`company-logo ${sizeClasses[size]}`}>
+  <img src={logo.src} alt={alt} class="company-logo__image" />
+  <span class="company-logo__name">{name}</span>
+</div>
+
+<style>
+  .company-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .company-logo__image {
+    flex-shrink: 0;
+    border-radius: 2px;
+  }
+
+  .company-logo--small .company-logo__image {
+    width: 16px;
+    height: 16px;
+  }
+
+  .company-logo--medium .company-logo__image {
+    width: 20px;
+    height: 20px;
+  }
+
+  .company-logo--large .company-logo__image {
+    width: 24px;
+    height: 24px;
+  }
+
+  .company-logo__name {
+    font-weight: 600;
+  }
+</style>
