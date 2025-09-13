@@ -19,6 +19,16 @@
   text-align: center;
 }
 
+.book-card__cover-link {
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.book-card__cover-link:hover {
+  transform: scale(1.05);
+}
+
 .book-card__image {
   max-width: 120px;
   height: auto;

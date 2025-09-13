@@ -8,11 +8,26 @@ export default function BookCard({ book }) {
     <div className="book-card">
       <div className="book-card__cover">
         {coverImage ? (
-          <img
-            src={coverImage}
-            alt={`Portada de ${title}`}
-            className="book-card__image"
-          />
+          goodreadsUrl ? (
+            <a
+              href={goodreadsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="book-card__cover-link"
+            >
+              <img
+                src={coverImage}
+                alt={`Portada de ${title}`}
+                className="book-card__image"
+              />
+            </a>
+          ) : (
+            <img
+              src={coverImage}
+              alt={`Portada de ${title}`}
+              className="book-card__image"
+            />
+          )
         ) : (
           <div className="book-card__placeholder">
             <span className="book-card__placeholder-text">📚</span>
