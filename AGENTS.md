@@ -52,7 +52,8 @@ Components follow the same structure as content:
 src/components/
 ├── frontend/                    # Frontend Handbook components
 │   ├── tech-pillars.jsx        # React component for the 3 pillars
-│   └── microinteractions.jsx   # Interactive microinteractions component
+│   ├── microinteractions.jsx   # Interactive microinteractions component
+│   └── utilitas-delectus.jsx   # Interactive utilitas vs delectus slider
 ├── marcadores/                  # Bookmark components
 │   ├── book-card.jsx           # Individual book card
 │   ├── book-card.css           # BookCard styles
