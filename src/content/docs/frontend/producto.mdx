@@ -6,13 +6,13 @@ sidebar:
   order: 3
 ---
 import Image from "@/components/ui/Image.astro"
-import ProductPillar from "./__assets__/producto-001.png";
+import TechPillars from "@/components/frontend/tech-pillars.jsx"
 
 _¿Por qué?_ y _¿para qué?_ Son dos grandes preguntas que dan sentido y significado a lo que hacemos. No se trata solo de ejecutar, de lo que trata realmente ese juego es de resolver problemas reales de la humanidad, empoderándola para que siga creciendo y se siga desarrollando.
 
 Como ingenieros debemos ayudar a dar respuesta a muchas de las incógnitas que se plantean en nuestro proyecto: ¿_qué vamos a hacer_? y ¿_cómo lo vamos a hacer_?
 
-<Image src={ProductPillar} alt="Los tres pilares más importantes. Producto resaltado." />
+<TechPillars activePillar="product" client:load />
 
 ## No te olvides de quién te da de comer
 
