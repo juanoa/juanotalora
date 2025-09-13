@@ -5,19 +5,8 @@ tableOfContents: false
 prev: false
 next: false
 ---
-import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import OpinionCards from "@/components/opinion/OpinionCards.astro";
 
 Mis artículos de opinión sobre sociedad, tecnología e Internet.
 
-<CardGrid>
-  <LinkCard
-    title="Internet nos está jodiendo la vida"
-    description="Cómo la industria de la atención nos está robando nuestro recurso más valioso"
-    href="/opinion/redes-sociales/"
-  />
-  <LinkCard
-    title="Errar"
-    description="Faltar a alguien, no cumplir con lo que se le debe"
-    href="/opinion/errar/"
-  />
-</CardGrid>
+<OpinionCards />

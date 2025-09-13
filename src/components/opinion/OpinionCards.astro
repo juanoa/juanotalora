@@ -1,0 +1,25 @@
+---
+import { LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { getCollection } from "astro:content";
+
+// Get all posts from the "docs" collection that start with "opinion/" and are not drafts
+const opinionPosts = await getCollection("docs", ({ id, data }) => {
+  return id.startsWith("opinion/") && id !== "opinion/index" && !data.draft;
+});
+
+const sortedPosts = opinionPosts.sort((a, b) => {
+  return b.id.localeCompare(a.id);
+});
+---
+
+<CardGrid>
+  {
+    sortedPosts.map((post) => (
+      <LinkCard
+        title={post.data.title}
+        description={post.data.description}
+        href={`/${post.id}/`}
+      />
+    ))
+  }
+</CardGrid>
