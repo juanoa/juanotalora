@@ -8,7 +8,7 @@ import vercel from '@astrojs/vercel';
 export default defineConfig({
 	site: 'https://www.juanoa.com',
 	integrations: [starlight({
-		title: 'juanoa',
+		title: 'juan.md',
 		favicon: '/favicon.png',
 		customCss: [
 			// Fontsource files for to regular and semi-bold font weights.
