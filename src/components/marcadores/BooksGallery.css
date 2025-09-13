@@ -1,0 +1,31 @@
+.books-gallery {
+  margin: 2rem 0;
+}
+
+.books-gallery__section {
+  margin-bottom: 3rem;
+}
+
+.books-gallery__section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--sl-color-text);
+  border-bottom: 2px solid var(--sl-color-accent-low);
+  padding-bottom: 0.5rem;
+}
+
+.books-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .books-gallery__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

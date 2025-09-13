@@ -52,6 +52,11 @@ Components follow the same structure as content:
 src/components/
 ├── frontend/                    # Frontend Handbook components
 │   └── tech-pillars.jsx        # React component for the 3 pillars
+├── marcadores/                  # Bookmark components
+│   ├── BookCard.jsx            # Individual book card
+│   ├── BookCard.css            # BookCard styles
+│   ├── BooksGallery.jsx        # Books gallery container
+│   └── BooksGallery.css        # BooksGallery styles
 ├── off-topic/                   # Components for off-topic content
 │   └── money/                   # Money-specific components
 │       ├── AgeCalculator.astro
@@ -83,6 +88,7 @@ Markdown content...
 ### 2. Component Imports
 - **Astro Components**: `import Component from "@/components/path/component.astro"`
 - **React Components**: `import Component from "@/components/path/component.jsx"`
+- **Component Styles**: `import './Component.css'` (alongside component file)
 - **Local Images**: `import Image from "./__assets__/image.png"`
 
 ### 3. React Components
@@ -152,8 +158,9 @@ Components use specific colors:
 - **Design**: `#D4F1D4` (light green) / `#B4DFB4` (green)
 
 ### Custom CSS
-- **File**: `/src/styles/custom.css`
-- **Approach**: Global styles and Starlight customizations
+- **Global Styles**: `/src/styles/custom.css` - Only for global styles and Starlight customizations
+- **Component Styles**: Each component has its own CSS file alongside the component
+- **Import Pattern**: `import './Component.css'` in the component file
 
 ## Rules for New Development
 
@@ -168,6 +175,8 @@ Components use specific colors:
 2. **React**: For interactive components (charts, forms, etc.)
 3. **Location**: Follow the content folder structure
 4. **Naming**: PascalCase, descriptive
+5. **Styles**: Create a CSS file alongside the component (e.g., `Component.css`)
+6. **Import**: Import the CSS file in the component: `import './Component.css'`
 
 ### 3. Add MDX Content
 1. **Frontmatter**: Include title, description, sidebar if needed
@@ -186,15 +195,26 @@ Components use specific colors:
 ```jsx
 // /src/components/new-section/MyComponent.jsx
 import React, { useState } from 'react';
+import './MyComponent.css';
 
 export default function MyComponent({ prop }) {
   const [state, setState] = useState(prop);
   
   return (
-    <div>
+    <div className="my-component">
       {/* Component content */}
     </div>
   );
+}
+```
+
+```css
+/* /src/components/new-section/MyComponent.css */
+.my-component {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  background: var(--sl-color-gray-7);
 }
 ```
 
@@ -216,6 +236,8 @@ import MyComponent from "@/components/new-section/MyComponent.jsx"
 ```astro
 ---
 // /src/components/new-section/MyComponent.astro
+import './MyComponent.css';
+
 export interface Props {
   title: string;
   content?: string;
@@ -228,12 +250,16 @@ const { title, content } = Astro.props;
   <h2>{title}</h2>
   {content && <p>{content}</p>}
 </div>
+```
 
-<style>
-  .my-component {
-    margin: 1rem 0;
-  }
-</style>
+```css
+/* /src/components/new-section/MyComponent.css */
+.my-component {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  background: var(--sl-color-gray-7);
+}
 ```
 
 ## Deployment
@@ -256,3 +282,5 @@ npm run preview  # Build preview
 4. **Performance**: Use `client:load` only when necessary
 5. **SEO**: Include title and description in all MDX files
 6. **Accessibility**: Follow good accessibility practices
+7. **Component Styles**: Each component should have its own CSS file alongside the component
+8. **Global Styles**: Only use `/src/styles/custom.css` for global styles and Starlight customizations

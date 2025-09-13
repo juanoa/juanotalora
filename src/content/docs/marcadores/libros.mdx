@@ -5,22 +5,66 @@ sidebar:
   order: 2
 ---
 
+import BooksGallery from "@/components/marcadores/BooksGallery.jsx"
+import BookCard from "@/components/marcadores/BookCard.jsx"
+
 He pasado gran parte de mi vida leyendo. Retomé este hábito en la universidad, después de un parón de unos cuantos años. Aquí van algunas de mis recomendaciones, tanto de libros más técnicos como de ficción.
 
 Las listas no siguen un orden. Si están aquí es porque tengo un buen recuerdo de ellos.
 
 ## Ficción
 
-- *[Espía y traidor](https://goodreads.com/book/show/46121368.Esp_a_y_traidor_La_mayor_historia_de_espionaje_de_la_Guerra_Fr_a)* de __Ben Macintyre__. Un libro de no ficción que cuenta la historia de Oleg Gordievsky, un espía soviético que trabajó para el MI6 británico durante la Guerra Fría. Es un libro muy bien escrito que atrapa hasta el último momento.
-
-- *[Patria](https://www.goodreads.com/book/show/31842429-patria)* de __Fernando Aramburu__. Simplemente de mis libros favoritos. Relata el conflicto vasco de una forma magistral, con personajes bien construidos y una adaptación a cinematográfica que no desmerece en absoluto.
-
-- *[Proyecto Hail Mary](https://www.goodreads.com/book/show/57299481-proyecto-hail-mary)* de __Andy Weir__. No tuve la suerte de leer *The Martial*, aunque sí de ver la película, pero esta espectacular novela de ciencia ficción se ha hecho un hueco en esta lista.
+<BooksGallery client:load>
+  <BookCard 
+    book={{
+      title: "Espía y traidor",
+      author: "Ben Macintyre",
+      description: "Un libro de no ficción que cuenta la historia de Oleg Gordievsky, un espía soviético que trabajó para el MI6 británico durante la Guerra Fría. Es un libro muy bien escrito que atrapa hasta el último momento.",
+      goodreadsUrl: "https://goodreads.com/book/show/46121368.Esp_a_y_traidor_La_mayor_historia_de_espionaje_de_la_Guerra_Fr_a",
+      coverImage: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1559343368i/46121368.jpg"
+    }}
+  />
+  <BookCard 
+    book={{
+      title: "Patria",
+      author: "Fernando Aramburu",
+      description: "Simplemente de mis libros favoritos. Relata el conflicto vasco de una forma magistral, con personajes bien construidos y una adaptación cinematográfica que no desmerece en absoluto.",
+      goodreadsUrl: "https://www.goodreads.com/book/show/31842429-patria",
+      coverImage: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1473112984i/31842429.jpg"
+    }}
+  />
+  <BookCard 
+    book={{
+      title: "Proyecto Hail Mary",
+      author: "Andy Weir",
+      description: "No tuve la suerte de leer *The Martian*, aunque sí de ver la película, pero esta espectacular novela de ciencia ficción se ha hecho un hueco en esta lista.",
+      goodreadsUrl: "https://www.goodreads.com/book/show/57299481-proyecto-hail-mary",
+      coverImage: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1614788164i/57299481.jpg"
+    }}
+  />
+</BooksGallery>
 
 ## No ficción
 
-- *[Sapiens](https://www.goodreads.com/book/show/23692271-sapiens)* de __Yuval Noah Harari__. Un libro que cambió mi forma de ver la historia de la humanidad. Puede que para muchos no sea nada nuevo, mientras que otros dudarán de sus teorías, pero aun así, creo que es un libro que todo el mundo debería de leer.
-
-- *[Momentos estelares de la humanidad](https://www.goodreads.com/book/show/65105.Momentos_estelares_de_la_humanidad)* de __Stefan Zweig__. Me parece un libro de obligada lectura en todos los colegios e institutos. Además, es bastante corto y ameno de leer. No desmerece.
+<BooksGallery client:load>
+  <BookCard 
+    book={{
+      title: "Sapiens",
+      author: "Yuval Noah Harari",
+      description: "Un libro que cambió mi forma de ver la historia de la humanidad. Puede que para muchos no sea nada nuevo, mientras que otros dudarán de sus teorías, pero aun así, creo que es un libro que todo el mundo debería de leer.",
+      goodreadsUrl: "https://www.goodreads.com/book/show/23692271-sapiens",
+      coverImage: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1703329310i/23692271.jpg"
+    }}
+  />
+  <BookCard 
+    book={{
+      title: "Momentos estelares de la humanidad",
+      author: "Stefan Zweig",
+      description: "Me parece un libro de obligada lectura en todos los colegios e institutos. Además, es bastante corto y ameno de leer. No desmerece.",
+      goodreadsUrl: "https://www.goodreads.com/book/show/65105.Momentos_estelares_de_la_humanidad",
+      coverImage: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1291673822i/65105.jpg"
+    }}
+  />
+</BooksGallery>
 
 > Mención especial a la editorial [Acantilado](https://www.acantilado.es/), cuyos libros me han ayudado (y me siguen ayudado) a construirme tal y como soy.
