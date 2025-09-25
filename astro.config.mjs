@@ -6,7 +6,7 @@ import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://www.juanoa.com',
+	site: 'https://www.juan.md',
 	integrations: [starlight({
 		title: 'juan.md',
 		favicon: '/favicon.png',
