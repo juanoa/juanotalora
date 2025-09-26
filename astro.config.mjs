@@ -9,11 +9,12 @@ export default defineConfig({
 	site: 'https://www.juan.md',
 	integrations: [starlight({
 		title: 'juan.md',
+		logo: {
+			src: './src/assets/logo.png',
+			replacesTitle: true,
+		},
 		favicon: '/favicon.png',
 		customCss: [
-			// Fontsource files for to regular and semi-bold font weights.
-			'@fontsource-variable/roboto-slab/index.css',
-
 			'./src/styles/custom.css',
 		],
 		components: {
