@@ -2,8 +2,9 @@
   "extends": "astro/tsconfigs/strict",
   "include": [
     ".astro/types.d.ts",
-    "**/*"
-, "src/content/docs/frontend/.mdx"  ],
+    "**/*",
+    "src/content/docs/frontend/.mdx"
+  ],
   "exclude": [
     "dist"
   ],
@@ -12,7 +13,9 @@
     "jsxImportSource": "react",
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["src/components/*"],
+      "@/components/*": [
+        "src/components/*"
+      ],
     }
   }
 }
