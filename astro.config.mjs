@@ -9,10 +9,6 @@ export default defineConfig({
 	site: 'https://www.juan.md',
 	integrations: [starlight({
 		title: 'juan.md',
-		logo: {
-			src: './src/assets/logo.png',
-			replacesTitle: true,
-		},
 		favicon: '/favicon.png',
 		customCss: [
 			'./src/styles/custom.css',
