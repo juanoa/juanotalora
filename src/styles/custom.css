@@ -1,0 +1,24 @@
+.header {
+  border-bottom: none;
+}
+
+.sidebar-pane {
+  border-inline-end: none;
+}
+
+.content-panel {
+  border-top: none;
+}
+
+.right-sidebar {
+  border-inline-start: none
+}
+
+nav {
+  border: none;
+}
+
+:root {
+  --sl-color-bg-nav: var(--sl-color-bg);
+  --sl-color-bg-sidebar: var(--sl-color-bg);
+}
