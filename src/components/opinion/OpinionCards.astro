@@ -1,25 +1,68 @@
 ---
-import { LinkCard, CardGrid } from "@astrojs/starlight/components";
 import { getCollection } from "astro:content";
+import "./OpinionCards.css";
+
+// Keep a shared formatter so we only instantiate it once
+const dateFormatter = new Intl.DateTimeFormat("es-ES", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+});
 
 // Get all posts from the "docs" collection that start with "opinion/" and are not drafts
 const opinionPosts = await getCollection("docs", ({ id, data }) => {
   return id.startsWith("opinion/") && id !== "opinion/index" && !data.draft;
 });
 
-const sortedPosts = opinionPosts.sort((a, b) => {
-  return b.id.localeCompare(a.id);
-});
+const sortedPosts = opinionPosts
+  .map((post) => {
+    const rawDate = post.data.publicationDate;
+    const parsedDate = rawDate ? new Date(rawDate) : undefined;
+    const validDate =
+      parsedDate && !Number.isNaN(parsedDate.valueOf())
+        ? parsedDate
+        : undefined;
+
+    return {
+      ...post,
+      parsedDate: validDate,
+      formattedDate: validDate ? dateFormatter.format(validDate) : undefined,
+    };
+  })
+  .sort((a, b) => {
+    if (a.parsedDate && b.parsedDate) {
+      return b.parsedDate.valueOf() - a.parsedDate.valueOf();
+    }
+
+    if (a.parsedDate) return -1;
+    if (b.parsedDate) return 1;
+
+    return b.id.localeCompare(a.id);
+  });
 ---
 
-<CardGrid>
+<ul class="opinion-posts">
   {
     sortedPosts.map((post) => (
-      <LinkCard
-        title={post.data.title}
-        description={post.data.description}
-        href={`/${post.id}/`}
-      />
+      <li class="opinion-posts__item">
+        <div class="opinion-posts__header">
+          <a class="opinion-posts__title" href={`/${post.id}/`}>
+            {post.data.title}
+          </a>
+          {post.parsedDate && post.formattedDate && (
+            <time
+              class="opinion-posts__date"
+              dateTime={post.data.publicationDate}
+              aria-label={`Publicado el ${post.formattedDate}`}
+            >
+              {post.formattedDate}
+            </time>
+          )}
+        </div>
+        {post.data.description && (
+          <p class="opinion-posts__description">{post.data.description}</p>
+        )}
+      </li>
     ))
   }
-</CardGrid>
+</ul>
