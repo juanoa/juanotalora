@@ -22,3 +22,27 @@ nav {
   --sl-color-bg-nav: var(--sl-color-bg);
   --sl-color-bg-sidebar: var(--sl-color-bg);
 }
+
+.sl-markdown-content
+li
+> :is(
+  :last-child:not(
+      li,
+      ul,
+      ol,
+      a,
+      strong,
+      em,
+      del,
+      span,
+      input,
+      code,
+      br,
+      script,
+      :where(.not-content *)
+    ),
+    
+  :not(script):has(~ script:last-child):not(:has(~ :not(script)))
+) {
+    margin-bottom: 0;
+}
