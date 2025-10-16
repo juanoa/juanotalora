@@ -50,13 +50,16 @@ const sortedPosts = opinionPosts
             {post.data.title}
           </a>
           {post.parsedDate && post.formattedDate && (
-            <time
-              class="opinion-posts__date"
-              dateTime={post.data.publicationDate}
-              aria-label={`Publicado el ${post.formattedDate}`}
-            >
-              {post.formattedDate}
-            </time>
+            <>
+              <span class="opinion-posts__dots" aria-hidden="true"></span>
+              <time
+                class="opinion-posts__date"
+                datetime={post.parsedDate.toISOString()}
+                aria-label={`Publicado el ${post.formattedDate}`}
+              >
+                {post.formattedDate}
+              </time>
+            </>
           )}
         </div>
         {post.data.description && (
