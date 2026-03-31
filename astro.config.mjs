@@ -31,6 +31,9 @@ export default defineConfig({
 			autogenerate: { directory: 'frontend' },
 			collapsed: true,
 		}, {
+			label: 'Ingeniería',
+			autogenerate: { directory: 'engineering' },
+		}, {
 			label: 'Off-topic',
 			autogenerate: { directory: 'off-topic' },
 			collapsed: true,
